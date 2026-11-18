@@ -26,7 +26,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     
-    baseURL: 'https://practicesoftwaretesting.com/',
+    baseURL: 'https://practicesoftwaretesting.com',
     testIdAttribute: 'data-test',
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
