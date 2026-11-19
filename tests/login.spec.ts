@@ -1,10 +1,10 @@
 import { test, expect } from '@playwright/test'
+import { LoginPage } from '../pages/login-page'
 
 test('user can log in', async ({ page }) => {
-    await page.goto('/auth/login')
-    await page.getByLabel('Email address').fill('customer2@practicesoftwaretesting.com')
-    await page.getByPlaceholder('Your password').fill('welcome01')
-    await page.getByRole('button', { name: 'Login' }).click()
+    const loginPage = new LoginPage(page)
+    await loginPage.goto()
+    await loginPage.login('customer2@practicesoftwaretesting.com', 'welcome01')
     await expect(page).toHaveURL(/\/account$/)
     await expect(page.getByRole('heading', { name: 'My account' })).toBeVisible()
 })
