@@ -5,7 +5,7 @@ export class HomePage{
         
     }
 
-    async goToHomePage(){
+    async goto(){
         await this.page.goto('/')
     }
 

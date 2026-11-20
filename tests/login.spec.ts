@@ -1,8 +1,7 @@
-import { test, expect } from '@playwright/test'
-import { LoginPage } from '../pages/login-page'
 
-test('user can log in', async ({ page }) => {
-    const loginPage = new LoginPage(page)
+import { test, expect } from '../fixtures/page-fixtures'
+
+test('user can log in', async ({loginPage, page }) => {
     await loginPage.goto()
     await loginPage.login('customer2@practicesoftwaretesting.com', 'welcome01')
     await expect(page).toHaveURL(/\/account$/)
